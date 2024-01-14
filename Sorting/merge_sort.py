@@ -48,3 +48,76 @@ ordered_list3 = merge_sort(unordered_list3)
 print(ordered_list1)
 print(ordered_list2)
 print(ordered_list3)
+
+Python
+
+
+class Node:
+  """Represents a single node in a linked list."""
+
+  def __init__(self, value):
+    """Initializes a node with a value."""
+    self.value = value
+    self.next = None  # Points to the next node in the list
+
+
+class LinkedList:
+  """Represents a linked list of nodes."""
+
+  def __init__(self, value):
+    """Initializes the linked list with a head node."""
+    new_node = Node(value)
+    self.head = new_node
+    self.tail = new_node  # Keeps track of the last node in the list
+    self.length = 1
+
+  def print_list(self):
+    """Prints the values of all nodes in the linked list."""
+    temp = self.head
+    while temp is not None:
+      print(temp.value)
+      temp = temp.next
+
+  def append(self, value):
+    """Adds a new node with the given value to the end of the list."""
+    new_node = Node(value)
+    if self.head is None:
+    self.head = new_node
+    self.tail = new_node
+    else:
+    self.tail.next = new_node  # Link the new node to the current tail
+    self.tail = new_node  # Update the tail pointer
+    self.length += 1
+
+
+def merge(self, other_list):
+  """Merges this linked list with another linked list in sorted order."""
+
+  # Get the head nodes of both lists
+  other_head = other_list.head
+
+  # Create a dummy node to simplify handling the merged list's head
+  dummy = Node(0)  # Value doesn't matter, as it won't be part of the final list
+  current = dummy  # Start building the merged list from the dummy node
+
+  # Iterate through both lists simultaneously, comparing values and appending nodes
+  while self.head is not None and other_head is not None:
+    if self.head.value < other_head.value:
+      current.next = self.head
+      self.head = self.head.next
+    else:
+      current.next = other_head
+      other_head = other_head.next
+    current = current.next  # Move to the next position in the merged list
+
+  # Append any remaining nodes from either list
+  current.next = self.head if self.head is not None else other_head
+
+  # Update the tail of the merged list
+  self.tail = other_list.tail if current.next is other_head else self.tail
+
+  # Set the head of the merged list to the node after the dummy node
+  self.head = dummy.next
+
+  # Update the length of the merged list
+  self.length += other_list.length
