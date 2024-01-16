@@ -121,3 +121,4 @@ def merge(self, other_list):
 
   # Update the length of the merged list
   self.length += other_list.length
+
