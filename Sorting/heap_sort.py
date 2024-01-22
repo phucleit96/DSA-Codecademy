@@ -91,7 +91,7 @@ class MaxHeap:
         return self.right_child_idx(idx)
 
 
-from max_heap import MaxHeap
+# from max_heap import MaxHeap
 
 
 def heapsort(lst):
