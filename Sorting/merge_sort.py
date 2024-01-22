@@ -49,7 +49,6 @@ print(ordered_list1)
 print(ordered_list2)
 print(ordered_list3)
 
-Python
 
 
 class Node:
@@ -82,12 +81,12 @@ class LinkedList:
     """Adds a new node with the given value to the end of the list."""
     new_node = Node(value)
     if self.head is None:
-    self.head = new_node
-    self.tail = new_node
+      self.head = new_node
+      self.tail = new_node
     else:
-    self.tail.next = new_node  # Link the new node to the current tail
-    self.tail = new_node  # Update the tail pointer
-    self.length += 1
+      self.tail.next = new_node  # Link the new node to the current tail
+      self.tail = new_node  # Update the tail pointer
+      self.length += 1
 
 
 def merge(self, other_list):
