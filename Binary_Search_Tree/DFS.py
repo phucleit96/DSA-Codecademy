@@ -1,5 +1,5 @@
 # Import necessary classes and functions from TreeNode module
-from TreeNode import TreeNode, sample_root_node, print_path, print_tree
+from tree import TreeNode, sample_root_node, print_path, print_tree
 
 # Print the tree structure
 print_tree(sample_root_node)
