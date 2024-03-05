@@ -73,10 +73,9 @@ with personalized('John', 'Michael') as p:
 
 
 # Another example using the `generic` context manager
-with generic('happy_bday.txt', 'Josiah', 'Remy') as g:
+# with generic('happy_bday.txt', 'Josiah', 'Remy') as g:
     # Read the entire content of the generated card file (previously written)
-    card_content = g.read()
-    print(card_content)
+
 
 # Commented-out example: replace with your personalized message
 # with personalized('Josiah', 'Esther') as p:
